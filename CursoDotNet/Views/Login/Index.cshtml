@@ -1,0 +1,22 @@
+﻿@model CursoDotNet.Models.UserViewModel
+
+@{
+	Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/login.css" />
+
+<section>
+	<h1>Autenticação</h1>
+
+	<form action="/Login/Test" method="post">
+		<input type="text" name="email" value="@Model.Email" placeholder="Username ou e-mail" />
+		<input type="password" name="password" value="@Model.Password" placeholder="Senha" />
+
+		<a href="#">Esqueceu a senha?</a>
+
+		<button type="submit">Login</button>
+	</form>
+
+	<label>Não tem conta? <a href="#">Crie aqui</a></label>
+</section>

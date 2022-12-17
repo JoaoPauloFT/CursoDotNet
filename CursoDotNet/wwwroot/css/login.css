@@ -1,0 +1,33 @@
+﻿section {
+    border: 1px solid #000000;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form a {
+    margin-top: 10px;
+}
+
+input {
+    margin-top: 20px;
+}
+
+button {
+    margin: 20px 0;
+    background-color: green;
+    color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+label {
+    margin-bottom: 30px;
+}
