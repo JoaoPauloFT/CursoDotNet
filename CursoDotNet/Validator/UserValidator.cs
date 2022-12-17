@@ -7,7 +7,7 @@ namespace CursoDotNet.Validator
 	{
 		public UserValidator() 
 		{
-			RuleFor(user => user.Email).EmailAddress().WithMessage("E-mail Invalido");
+			RuleFor(user => user.Email).NotNull().EmailAddress().WithMessage("E-mail Invalido");
 			//RuleFor(user => user.UserName).NotNull();
 			RuleFor(user => user.Password).NotNull().WithMessage("Senha Vazia");
 		}

@@ -10,22 +10,27 @@ namespace CursoDotNet.Controllers
         public IActionResult Index()
         {
             UserViewModel user = new UserViewModel();
-            return View("Index", user);
+
+			user.Email= "ghsadkjg";
+
+			UserValidator validator = new UserValidator();
+
+			ValidationResult results = validator.Validate(user);
+
+			if (!results.IsValid)
+			{
+				foreach (var error in results.Errors)
+				{
+					Console.WriteLine("Property " + error.PropertyName + " failed validation. Error was: " + error.ErrorMessage);
+				}
+			}
+
+			return View("Index", user);
         }
+
+		[HttpPost]
         public IActionResult Test(UserViewModel user)
         {
-
-            UserValidator validator = new UserValidator();
-
-            ValidationResult results = validator.Validate(user);
-
-            if(!results.IsValid) 
-            {
-                foreach (var error in results.Errors)
-                {
-                    Console.WriteLine("Property " + error.PropertyName + " failed validation. Error was: " + error.ErrorMessage);
-                }
-			}
 
 			user.Email = "Email enviado";
 			return View("Index", user);
